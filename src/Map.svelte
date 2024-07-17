@@ -178,12 +178,6 @@
         updateMap(lat, lng, map,'',3);
     }
 
-    // function showPopup(message, latitude, longitude) {
-    //     new maplibregl.Popup({ closeOnClick: false })
-    //         .setLngLat([longitude, latitude])
-    //         .setHTML(`<h3>Alert</h3><p>${message}</p>`)
-    //         .addTo(map);
-    // }
 
     function resetMap() {
         map.flyTo({ center: originalCenter, zoom: originalZoom });
