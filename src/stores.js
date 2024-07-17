@@ -145,11 +145,11 @@ function attachEventListenersToListItems(map) {
             let url = '';
             switch (type) {
                 case "Restaurant":
-                    url = 'https://img.icons8.com/?size=100&id=qvscHBGB7saA&format=png&color=000000';
+                    url = 'rest.png';//'https://img.icons8.com/?size=100&id=qvscHBGB7saA&format=png&color=000000';
                     break;
 
                 case "Monument":
-                    url = 'https://img.icons8.com/?size=100&id=17621&format=png&color=000000';
+                    url = 'mon.png';//'https://img.icons8.com/?size=100&id=17621&format=png&color=000000';
                     break;
 
                 default:
@@ -428,11 +428,11 @@ export async function initLoadLocations(map) {
         let url = '';
         switch (location.type) {
             case "Restaurant":
-                url = 'https://img.icons8.com/?size=100&id=qvscHBGB7saA&format=png&color=000000';
+                url = 'rest.png';//'https://img.icons8.com/?size=100&id=qvscHBGB7saA&format=png&color=000000';
                 break;
 
             case "Monument":
-                url = 'https://img.icons8.com/?size=100&id=17621&format=png&color=000000';
+                url = 'mon.png';//'https://img.icons8.com/?size=100&id=17621&format=png&color=000000';
                 break;
 
             default:
