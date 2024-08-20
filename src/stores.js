@@ -64,7 +64,7 @@ export function updateLocationList(locs, map) {
     locationList.appendChild(table);
 
     const tbody = table.querySelector('tbody');
-
+    console.log("locs",locs);
     locs.forEach(location => {
         const row = document.createElement('tr');
         // listItem.className = 'location-item';
@@ -83,12 +83,12 @@ export function updateLocationList(locs, map) {
             </td>
             <td>
                 <select id="ratings-${location.id}">
-                    <option value="0" ${location.ratings === '0' ? 'selected' : ''}>0</option>
-                    <option value="1" ${location.ratings === '1' ? 'selected' : ''}>1</option>
-                    <option value="2" ${location.ratings === '2' ? 'selected' : ''}>2</option>
-                    <option value="3" ${location.ratings === '3' ? 'selected' : ''}>3</option>
-                    <option value="4" ${location.ratings === '4' ? 'selected' : ''}>4</option>
-                    <option value="5" ${location.ratings === '5' ? 'selected' : ''}>5</option>
+                    <option value="0" ${location.ratings == '0' ? 'selected' : ''}>0</option>
+                    <option value="1" ${location.ratings == '1' ? 'selected' : ''}>1</option>
+                    <option value="2" ${location.ratings == '2' ? 'selected' : ''}>2</option>
+                    <option value="3" ${location.ratings == '3' ? 'selected' : ''}>3</option>
+                    <option value="4" ${location.ratings == '4' ? 'selected' : ''}>4</option>
+                    <option value="5" ${location.ratings == '5' ? 'selected' : ''}>5</option>
                 </select>
             </td>
             <td><textarea id="note-${location.id}">${location.note}</textarea></td>
@@ -287,7 +287,7 @@ export async function getInitialData() {
 
 
         const data = json.features
-            .filter(feature => feature.attributes.Type === "Restaurant" || feature.attributes.Type === "Monument")
+            .filter(feature => feature.attributes.Type === "Restaurant" || feature.attributes.Type === "Monument" && feature.attributes.Name != "")
             .map(feature => ({
                 OBJECTID: feature.attributes.OBJECTID,
                 lname: feature.attributes.Name,

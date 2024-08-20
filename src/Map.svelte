@@ -135,11 +135,11 @@
                 closeOnClick: false,
             });
 
-            map.on("mouseover", "polygons", (e) => {
-                map.getCanvas().style.cursor = "pointer";
-                const description = e.features[0].properties.neighname;
-                popup.setLngLat(e.lngLat).setHTML(description).addTo(map);
-            });
+            // map.on("mouseover", "polygons", (e) => {
+            //     map.getCanvas().style.cursor = "pointer";
+            //     const description = e.features[0].properties.neighname;
+            //     popup.setLngLat(e.lngLat).setHTML(description).addTo(map);
+            // });
 
             map.on("click", "polygons", (e) => {
                 map.getCanvas().style.cursor = "pointer";
