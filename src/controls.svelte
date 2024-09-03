@@ -30,7 +30,7 @@
                         ) {
 
                             latitude = lastLat;
-                            longitude - lastLang;
+                            longitude = lastLang;
                         }
                         if (
                             lastLang != longitude ||
