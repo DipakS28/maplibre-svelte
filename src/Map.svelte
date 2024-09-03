@@ -32,7 +32,7 @@
             center: originalCenter,
             zoom: originalZoom,
             preserveDrawingBuffer: true
-
+            
         });
 
         map.addControl(
@@ -75,7 +75,9 @@
             map.addControl(new LoadingIndicatorControl(directions));
         });
 
-        document.getElementById('searchBar').addEventListener('input', handleSearch);
+        document
+            .getElementById("searchBar")
+            .addEventListener("input", handleSearch);
     });
 
     // const polygonCoordinates = [
@@ -158,11 +160,13 @@
 
     function handleSearch(event) {
         query = event.target.value.toLowerCase();
-        searchLocations(query).then(results => {
-            updateLocationList(results, map);
-        }).catch(error => {
-            console.error('Search error:', error);
-        });
+        searchLocations(query)
+            .then((results) => {
+                updateLocationList(results, map);
+            })
+            .catch((error) => {
+                console.error("Search error:", error);
+            });
     }
 
     function addMarker(lat, lng) {
@@ -175,9 +179,8 @@
             $firstMarker.forEach((marker) => marker.remove());
             // firstMarker.set([]);
         }
-        updateMap(lat, lng, map,'',3);
+        updateMap(lat, lng, map, "", 3);
     }
-
 
     function resetMap() {
         map.flyTo({ center: originalCenter, zoom: originalZoom });
@@ -187,28 +190,29 @@
     const originalZoom = 10;
     let i = 0;
     let j = 0;
-    let query = '';
+    let query = "";
 </script>
 
 <Controls bind:map bind:directions />
 <!-- <div style="display: flex; flex-direction: column;"> -->
-<div id="map">
-</div>
+<div id="map"></div>
 
-<div id="locations" >
+<div id="locations">
     <h2>Location List</h2>
-    <input type="text" id="searchBar" placeholder="Search by name, type, or rating...">
+    <input
+        type="text"
+        id="searchBar"
+        placeholder="Search by name, type, or rating..."
+    />
     <ul id="locationList"></ul>
-<!-- </div> -->
+    <!-- </div> -->
 
-
-<!-- <div id="rChart" style="width: 300px; height: 400px;">
+    <!-- <div id="rChart" style="width: 300px; height: 400px;">
     <button on:click={() => showChart.set(false)}>X</button>
     <canvas id="ratingsChart" style="width: 300px; height: 300px;"
     ></canvas>
     <h2>Rating Pie Chart</h2>
 </div> -->
-
 </div>
 <!-- <Child {name} {age} {email} bind:name bind:age bind:email /> -->
 <!-- <div class="maplibregl-ctrl maplibregl-ctrl-group">
