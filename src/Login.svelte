@@ -20,7 +20,7 @@
 <form on:submit={handleSubmit}>
     <h1>Login</h1>
     <div class="input-group">
-        <label for="username">Username</label>
+        <label for="username">Username*</label>
         <input type="text" id="username" bind:value={user} required />
     </div>
     <div class="input-group">
