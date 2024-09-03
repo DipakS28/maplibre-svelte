@@ -25,6 +25,14 @@
                     navigator.geolocation.getCurrentPosition((position) => {
                         let { latitude, longitude } = position.coords;
                         if (
+                            Math.abs(latitude - lastLat) <= 0.00005 &&
+                            Math.abs(longitude - lastLang) <= 0.00005
+                        ) {
+
+                            latitude = lastLat;
+                            longitude - lastLang;
+                        }
+                        if (
                             lastLang != longitude ||
                             lastLat != latitude ||
                             time == 3
@@ -61,9 +69,8 @@
                             );
                             if (time != 3) {
                                 time = 0;
-                            }
-                            else{
-                                time ++;
+                            } else {
+                                time++;
                             }
                         } else {
                             time++;

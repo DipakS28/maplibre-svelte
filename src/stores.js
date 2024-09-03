@@ -198,13 +198,13 @@ export async function saveLocation(latitude, longitude, map, directions, time) {
     if (time == 3) {
 
         const locs = await db.locations.toArray();
-        // const existingLocations = locs.filter(location =>
-        //     location.latitude == latitude && location.longitude == longitude
-        // );
         const existingLocations = locs.filter(location =>
-            Math.abs(location.latitude - latitude) <= 0.00005 &&
-            Math.abs(location.longitude - longitude) <= 0.00005
+            location.latitude == latitude && location.longitude == longitude
         );
+        // const existingLocations = locs.filter(location =>
+        //     Math.abs(location.latitude - latitude) <= 0.00005 &&
+        //     Math.abs(location.longitude - longitude) <= 0.00005
+        // );
         
         console.log(existingLocations);
         if (existingLocations.length == 0) {
