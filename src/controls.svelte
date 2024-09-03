@@ -25,8 +25,8 @@
                     navigator.geolocation.getCurrentPosition((position) => {
                         let { latitude, longitude } = position.coords;
                         if (
-                            Math.abs(latitude - lastLat) <= 0.101 &&
-                            Math.abs(longitude - lastLang) <= 0.101
+                            Math.abs(latitude - lastLat) <= 0.001 &&
+                            Math.abs(longitude - lastLang) <= 0.001
                         ) {
 
                             latitude = lastLat;
